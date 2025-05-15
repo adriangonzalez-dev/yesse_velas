@@ -1,11 +1,200 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<!-- Burbujas estáticas - sin JavaScript -->
+	<div class="burbujas-fondo">
+		{Array.from({ length: 30 }).map((_, i) => (
+			<div
+				class="burbuja"
+				style={`
+					--size: ${Math.random() * 15 + 3}px;
+					--left: ${Math.random() * 100}%;
+					--animDuration: ${Math.random() * 8 + 5}s;
+					--animDelay: ${Math.random() * 7}s;
+				`}
+			></div>
+		))}
+	</div>
+
+	<div class="contenedor">
+		<div class="contenedor-title">
+			<img src="/logo.png" alt="Logo Velas Artesanales" class="logo">
+			<h1>Yesse Velas</h1>
+		</div>
+
+		<p>Ilumina tu vida con aromas que evocan sentimientos y recuerdos especiales ✨</p>
+
+		<div class="enlaces">
+			<a href="https://www.instagram.com/p/DIJY0luOOPj" class="enlace" target="_blank" rel="noopener noreferrer">
+				<svg viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 5H9.5C7.29086 5 5.5 6.79086 5.5 9V15C5.5 17.2091 7.29086 19 9.5 19H15.5C17.7091 19 19.5 17.2091 19.5 15V9C19.5 6.79086 17.7091 5 15.5 5Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 15C10.8431 15 9.5 13.6569 9.5 12C9.5 10.3431 10.8431 9 12.5 9C14.1569 9 15.5 10.3431 15.5 12C15.5 12.7956 15.1839 13.5587 14.6213 14.1213C14.0587 14.6839 13.2956 15 12.5 15Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <rect x="15.5" y="9" width="2" height="2" rx="1" transform="rotate(-90 15.5 9)" fill="#ffffff"></rect> <rect x="16" y="8.5" width="1" height="1" rx="0.5" transform="rotate(-90 16 8.5)" stroke="#ffffff" stroke-linecap="round"></rect> </g></svg>
+				Síguenos en Instagram
+			</a>
+			<a href="https://wa.me/5491130598577" class="enlace" target="_blank" rel="noopener noreferrer">
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.014 8.00613C6.12827 7.1024 7.30277 5.87414 8.23488 6.01043L8.23339 6.00894C9.14051 6.18132 9.85859 7.74261 10.2635 8.44465C10.5504 8.95402 10.3641 9.4701 10.0965 9.68787C9.7355 9.97883 9.17099 10.3803 9.28943 10.7834C9.5 11.5 12 14 13.2296 14.7107C13.695 14.9797 14.0325 14.2702 14.3207 13.9067C14.5301 13.6271 15.0466 13.46 15.5548 13.736C16.3138 14.178 17.0288 14.6917 17.69 15.27C18.0202 15.546 18.0977 15.9539 17.8689 16.385C17.4659 17.1443 16.3003 18.1456 15.4542 17.9421C13.9764 17.5868 8 15.27 6.08033 8.55801C5.97237 8.24048 5.99955 8.12044 6.014 8.00613Z" fill="#ffffff"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C10.7764 23 10.0994 22.8687 9 22.5L6.89443 23.5528C5.56462 24.2177 4 23.2507 4 21.7639V19.5C1.84655 17.492 1 15.1767 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6 18.6303L5.36395 18.0372C3.69087 16.4772 3 14.7331 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C11.0143 21 10.552 20.911 9.63595 20.6038L8.84847 20.3397L6 21.7639V18.6303Z" fill="#ffffff"></path> </g></svg>
+				Nuestro WhatsApp
+			</a>
+			<a href="/catalogo.pdf" download class="enlace">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+				Descargar Catálogo
+			</a>
+		</div>
+
+		<div class="footer">
+			&copy; 2025 Yesse Velas - Hecho con 💖
+		</div>
+	</div>
 </Layout>
+
+<style>
+	/* Contenedor de fondo para las burbujas */
+	.burbujas-fondo {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	/* Estilo de cada burbuja */
+	.burbuja {
+		position: absolute;
+		width: var(--size);
+		height: var(--size);
+		background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+		border-radius: 50%;
+		bottom: -50px;
+		left: var(--left);
+		opacity: 0;
+		animation: flotar var(--animDuration) infinite ease-in;
+		animation-delay: var(--animDelay);
+	}
+
+	@keyframes flotar {
+		0% {
+			bottom: -30px;
+			transform: translateX(0) rotate(0deg);
+			opacity: 0;
+		}
+		10% {
+			opacity: 0.25;
+		}
+		90% {
+			opacity: 0.2;
+		}
+		100% {
+			bottom: 110vh;
+			transform: translateX(70px) rotate(360deg);
+			opacity: 0;
+		}
+	}
+
+	.contenedor {
+		position: relative;
+		z-index: 10;
+		max-width: 500px;
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+		padding: 2rem;
+		background-color: rgba(255, 255, 255, 0.8);
+		border-radius: 20px;
+		box-shadow: 0 8px 32px rgba(223, 154, 197, 0.3);
+		backdrop-filter: blur(5px);
+	}
+
+	.contenedor-title
+	{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.logo {
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin: 0 auto 0rem;
+		border: 3px solid var(--color-secundario);
+		padding: 0px;
+		background-color: white;
+	}
+
+	h1 {
+		color: var(--color-secundario);
+		margin-bottom: 0.5rem;
+		font-size: 1.8rem;
+	}
+
+	p {
+		color: var(--color-texto);
+		margin-bottom: 2rem;
+		line-height: 1.5;
+	}
+
+	.enlaces {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.enlace {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		padding: 0.8rem;
+		border-radius: 12px;
+		background-color: var(--color-primario);
+		color: white;
+		font-weight: 600;
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+		box-shadow: 0 4px 8px rgba(202, 105, 162, 0.3);
+	}
+
+	.enlace:hover {
+		transform: translateY(-3px) scale(1.02);
+		background-color: var(--color-secundario);
+		box-shadow: 0 6px 12px rgba(202, 105, 162, 0.5);
+	}
+
+	.enlace:hover:before {
+		transform: translateX(100%);
+	}
+
+	.enlace:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 255, 255, 0.2),
+			transparent
+		);
+		transition: transform 0.6s ease;
+	}
+
+	.enlace svg {
+		margin-right: 10px;
+	}
+
+	.footer {
+		color: var(--color-secundario);
+		margin-top: 2rem;
+		font-size: 0.8rem;
+	}
+</style>
